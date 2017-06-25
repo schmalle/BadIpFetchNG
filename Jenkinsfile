@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  def rtGradle = Artifactory.newGradleBuild()
+  rtGradle.tool = "Gradle-2.4"
+  
   stages {
     stage('Checkout') {
       steps {
@@ -7,10 +10,8 @@ pipeline {
       }
     }
     stage('Build') {
-      steps {
-        sh '''/root/.sdkman/bin/sdkman-init.sh
-gradle build
-'''
+              buildInfo = rtGradle.run rootDir: ".", buildFile: 'build.gradle', tasks: 'build'
+      
       }
     }
   }

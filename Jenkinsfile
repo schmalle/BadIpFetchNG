@@ -1,7 +1,7 @@
 pipeline {
   agent any
   def rtGradle = Artifactory.newGradleBuild()
-  rtGradle.tool = "Gradle-2.4"
+  rtGradle.tool = "Gradle 4.0"
   
   stages {
     stage('Checkout') {

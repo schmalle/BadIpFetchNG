@@ -15,4 +15,4 @@ include 'api'
 include 'services:webservice'
 */
 
-rootProject.name = 'BadIPFetch2'
+rootProject.name = 'BadIpFetchNG'

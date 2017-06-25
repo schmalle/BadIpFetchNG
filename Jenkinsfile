@@ -8,7 +8,8 @@ pipeline {
     }
     stage('Build') {
       steps {
-        sh '''gradle build
+        sh '''/root/.sdkman/bin/sdkman-init.sh
+gradle build
 '''
       }
     }
